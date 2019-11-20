@@ -8,6 +8,12 @@
 
     <include
         android:id="@+id/includelogin"
-        layout="@layout/activity_login"/>
+        layout="@layout/activity_login"
+        android:visibility="visible"/>
+    <include
+        android:id="@+id/includeHome"
+        android:visibility="invisible"
+        layout="@layout/activity_home_principal"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

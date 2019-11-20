@@ -1,8 +1,10 @@
 package com.diogopinto.registrodequilometroeviagens.ui.login;
 
+import androidx.databinding.ObservableField;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.Observer;
 
 import android.util.Patterns;
 
@@ -16,6 +18,8 @@ public class LoginViewModel extends ViewModel {
     private MutableLiveData<LoginFormState> loginFormState = new MutableLiveData<>();
     private MutableLiveData<LoginResult> loginResult = new MutableLiveData<>();
     private LoginRepository loginRepository;
+
+    public ObservableField<String> email = new ObservableField<>();
 
     LoginViewModel(LoginRepository loginRepository) {
         this.loginRepository = loginRepository;
