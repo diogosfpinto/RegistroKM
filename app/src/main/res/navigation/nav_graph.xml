@@ -3,13 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginActivity">
+    app:startDestination="@id/homePrincipal">
 
-    <activity
-        android:id="@+id/loginActivity"
-        android:name="com.diogopinto.registrodequilometroeviagens.ui.login.LoginActivity"
-        android:label="activity_login"
-        tools:layout="@layout/activity_login" />
     <activity
         android:id="@+id/homePrincipal"
         android:name="com.diogopinto.registrodequilometroeviagens.HomePrincipal"

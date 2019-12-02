@@ -26,7 +26,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.diogopinto.registrodequilometroeviagens.HomePrincipal;
-import com.diogopinto.registrodequilometroeviagens.MainActivity;
 import com.diogopinto.registrodequilometroeviagens.R;
 import com.diogopinto.registrodequilometroeviagens.data.LoginDataSource;
 import com.diogopinto.registrodequilometroeviagens.data.LoginRepository;
