@@ -5,9 +5,9 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/homePrincipal">
 
-    <activity
+    <fragment
         android:id="@+id/homePrincipal"
-        android:name="com.diogopinto.registrodequilometroeviagens.HomePrincipal"
+        android:name="com.diogopinto.registrodequilometroeviagens.ui.principal.PrincipalFragment"
         android:label="activity_home_principal"
         tools:layout="@layout/activity_home_principal" />
 </navigation>

@@ -76,8 +76,11 @@ public class LoginActivity extends AppCompatActivity {
                     showLoginFailed(loginResult.getError());
                 }
                 if (loginResult.getSuccess() != null) {
-
                     updateUiWithUser(loginResult.getSuccess());
+
+                    //Iniciar chamada para tela principal
+                    Intent intent = new Intent(getApplicationContext(), HomePrincipal.class);
+                    startActivity(intent);
                 }
                 setResult(Activity.RESULT_OK);
 
@@ -134,9 +137,6 @@ public class LoginActivity extends AppCompatActivity {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
         // TODO : initiate successful logged in experience
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
-
-        Intent intent = new Intent(this, HomePrincipal.class);
-        startActivity(intent);
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {

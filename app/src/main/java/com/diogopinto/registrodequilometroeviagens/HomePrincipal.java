@@ -1,5 +1,6 @@
 package com.diogopinto.registrodequilometroeviagens;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -26,6 +27,15 @@ public class HomePrincipal extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this,
+                drawerLayout,
+                toolbar,
+                R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
         NavigationView navigationView = findViewById(R.id.nav_view);
 
 
@@ -33,7 +43,7 @@ public class HomePrincipal extends AppCompatActivity {
                 .setDrawerLayout(drawerLayout)
                 .build();
         final NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        //NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
