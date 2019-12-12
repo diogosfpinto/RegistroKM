@@ -39,7 +39,7 @@ public class HomePrincipal extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
 
 
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home)
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_homePrincipal, R.id.nav_historicoQuilometro)
                 .setDrawerLayout(drawerLayout)
                 .build();
         final NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

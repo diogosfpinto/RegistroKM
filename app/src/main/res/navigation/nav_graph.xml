@@ -3,11 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homePrincipal">
+    app:startDestination="@id/nav_homePrincipal">
 
     <fragment
-        android:id="@+id/homePrincipal"
+        android:id="@+id/nav_homePrincipal"
         android:name="com.diogopinto.registrodequilometroeviagens.ui.principal.PrincipalFragment"
         android:label="activity_home_principal"
         tools:layout="@layout/activity_home_principal" />
+
+    <fragment
+        android:id="@+id/nav_historicoQuilometro"
+        android:name="com.diogopinto.registrodequilometroeviagens.ui.principal.HistoricoQuilometro"
+        android:label="fragment_historico_quilometro"
+        tools:layout="@layout/fragment_historico_quilometro" />
 </navigation>
