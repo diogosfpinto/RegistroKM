@@ -8,13 +8,15 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.diogopinto.registrodequilometroeviagens.adapter.AdapterListaQuilometro;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomePrincipal extends AppCompatActivity {
-
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -45,7 +47,7 @@ public class HomePrincipal extends AppCompatActivity {
         final NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         //NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-    }
+    }//onCreate
 
     @Override
     public boolean onSupportNavigateUp() {
