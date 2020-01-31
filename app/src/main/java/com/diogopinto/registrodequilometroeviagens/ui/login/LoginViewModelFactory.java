@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.annotation.NonNull;
 
-import com.diogopinto.registrodequilometroeviagens.data.LoginDataSource;
-import com.diogopinto.registrodequilometroeviagens.data.LoginRepository;
+import com.diogopinto.registrodequilometroeviagens.data.login.LoginDataSource;
+import com.diogopinto.registrodequilometroeviagens.data.login.LoginRepository;
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

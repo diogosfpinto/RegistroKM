@@ -4,13 +4,12 @@ import androidx.databinding.ObservableField;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.Observer;
 
 import android.util.Patterns;
 
-import com.diogopinto.registrodequilometroeviagens.data.LoginRepository;
-import com.diogopinto.registrodequilometroeviagens.data.Result;
-import com.diogopinto.registrodequilometroeviagens.data.model.LoggedInUser;
+import com.diogopinto.registrodequilometroeviagens.data.login.LoginRepository;
+import com.diogopinto.registrodequilometroeviagens.data.login.Result;
+import com.diogopinto.registrodequilometroeviagens.data.login.model.LoggedInUser;
 import com.diogopinto.registrodequilometroeviagens.R;
 
 public class LoginViewModel extends ViewModel {

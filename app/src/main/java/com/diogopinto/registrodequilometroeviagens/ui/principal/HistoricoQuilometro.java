@@ -14,7 +14,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.diogopinto.registrodequilometroeviagens.R;
-import com.diogopinto.registrodequilometroeviagens.adapter.AdapterListaQuilometro;
+import com.diogopinto.registrodequilometroeviagens.data.principal.control.AdapterListaQuilometro;
+import com.diogopinto.registrodequilometroeviagens.data.principal.control.UltimoQuilometroDAO;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +27,8 @@ public class HistoricoQuilometro extends Fragment {
     }
 
     private RecyclerView recyclerView;
+
+    AdapterListaQuilometro adapterListaQuilometro;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,7 +38,8 @@ public class HistoricoQuilometro extends Fragment {
         // Inflate the layout for this fragment
         recyclerView = view.findViewById(R.id.recycler_lista_quilometros);
 
-        AdapterListaQuilometro adapterListaQuilometro = new AdapterListaQuilometro();
+        UltimoQuilometroDAO dao = new UltimoQuilometroDAO(getContext());
+        adapterListaQuilometro = new AdapterListaQuilometro(dao.retornarAllQuilometros());
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);

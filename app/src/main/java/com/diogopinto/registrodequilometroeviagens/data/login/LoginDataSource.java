@@ -1,6 +1,6 @@
-package com.diogopinto.registrodequilometroeviagens.data;
+package com.diogopinto.registrodequilometroeviagens.data.login;
 
-import com.diogopinto.registrodequilometroeviagens.data.model.LoggedInUser;
+import com.diogopinto.registrodequilometroeviagens.data.login.model.LoggedInUser;
 
 import java.io.IOException;
 

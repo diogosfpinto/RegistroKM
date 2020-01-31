@@ -16,7 +16,7 @@
     <string name="veiculo">Veículo:</string>
     <string name="msg_ultimaQuilometragem">Última Quilometragem:</string>
     <string name="tvEditTextKmHoje">Quilometro de hoje:</string>
-    <string name="tvRadioGroupExpediente">Este quilometro se refere a:</string>
+    <string name="tvRadioGroupExpediente">Este km se refere a:</string>
 
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>

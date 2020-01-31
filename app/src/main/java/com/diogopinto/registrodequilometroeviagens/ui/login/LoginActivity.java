@@ -3,10 +3,8 @@ package com.diogopinto.registrodequilometroeviagens.ui.login;
 import android.app.Activity;
 
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -18,7 +16,6 @@ import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -27,10 +24,8 @@ import android.widget.Toast;
 
 import com.diogopinto.registrodequilometroeviagens.HomePrincipal;
 import com.diogopinto.registrodequilometroeviagens.R;
-import com.diogopinto.registrodequilometroeviagens.data.LoginDataSource;
-import com.diogopinto.registrodequilometroeviagens.data.LoginRepository;
-import com.diogopinto.registrodequilometroeviagens.ui.login.LoginViewModel;
-import com.diogopinto.registrodequilometroeviagens.ui.login.LoginViewModelFactory;
+import com.diogopinto.registrodequilometroeviagens.data.login.LoginDataSource;
+import com.diogopinto.registrodequilometroeviagens.data.login.LoginRepository;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -92,6 +87,8 @@ public class LoginActivity extends AppCompatActivity {
         TextWatcher afterTextChangedListener = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                loginViewModel.loginDataChanged(usernameEditText.getText().toString(),
+                        passwordEditText.getText().toString());
                 // ignore
             }
 
@@ -131,7 +128,7 @@ public class LoginActivity extends AppCompatActivity {
                 findViewById(R.id.includeHome).setVisibility(View.VISIBLE);*/
             }
         });
-    }
+    }//onCreate
 
     private void updateUiWithUser(LoggedInUserView model) {
         String welcome = getString(R.string.welcome) + model.getDisplayName();

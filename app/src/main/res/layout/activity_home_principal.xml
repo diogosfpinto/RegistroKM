@@ -78,10 +78,10 @@
         app:layout_constraintBottom_toTopOf="@id/rgExpediente"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/novoKmTextInputLayout" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/novoKmTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/tvRadioGroupExpediente"
@@ -89,6 +89,7 @@
         app:layout_constraintTop_toBottomOf="@+id/msg_ultimaQuilometragem">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/novoKmTextInputText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="1234567890"
@@ -107,13 +108,13 @@
         app:layout_constraintTop_toBottomOf="@id/tvRadioGroupExpediente">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rbInicioExp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Início do expediente" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rbFinalExp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Final do expediente" />

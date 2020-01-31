@@ -1,6 +1,6 @@
-package com.diogopinto.registrodequilometroeviagens.data;
+package com.diogopinto.registrodequilometroeviagens.data.login;
 
-import com.diogopinto.registrodequilometroeviagens.data.model.LoggedInUser;
+import com.diogopinto.registrodequilometroeviagens.data.login.model.LoggedInUser;
 
 /**
  * Class that requests authentication and user information from the remote data source and
