@@ -11,4 +11,8 @@ public class QuilometragemFinalDAO {
     public boolean atualizarKmFinal(Quilometragem km, Quilometragem ultimaKm){
         return false;
     }
+
+    public boolean adicionarKmFinal(Quilometragem km){
+
+    }
 }

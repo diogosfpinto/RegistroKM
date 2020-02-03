@@ -10,13 +10,14 @@ import com.diogopinto.registrodequilometroeviagens.R;
 import com.diogopinto.registrodequilometroeviagens.data.principal.model.Quilometragem;
 
 import java.util.List;
+import java.util.Map;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class AdapterListaQuilometro extends RecyclerView.Adapter<AdapterListaQuilometro.MyViewHolder> {
 
-    private List<Quilometragem> listaQuilometros;
+    public List<Map<String, String>> listaQuilometros;
 
     public AdapterListaQuilometro(List listaQuilometros){
         this.listaQuilometros = listaQuilometros;
@@ -35,13 +36,13 @@ public class AdapterListaQuilometro extends RecyclerView.Adapter<AdapterListaQui
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        Log.i("ListaQuilometros", "Periodo: "+ listaQuilometros.get(position).getPeriodo());
-        Log.i("ListaQuilometros", "Km: "+listaQuilometros.get(position).getKm());
-        Log.i("ListaQuilometros", "Data: "+listaQuilometros.get(position).getHorario());
+        Log.i("ListaQuilometros", "KmInicio: "+ listaQuilometros.get(position).get("kmInicio"));
+        Log.i("ListaQuilometros", "KmFinal: "+listaQuilometros.get(position).get("kmFinal"));
+        Log.i("ListaQuilometros", "Data: "+listaQuilometros.get(position).get("horario"));
+        Log.i("ListaQuilometros", "KmPercorrido"+listaQuilometros.get(position).get("kmPercorrido"));
 
-        holder.observacao.setText(String.valueOf(listaQuilometros.get(position).getPeriodo()));
-        holder.kmPercorrido.setText(String.valueOf(listaQuilometros.get(position).getKm()));
-//        holder.data.setText(listaQuilometros.get(position).getHorario().toString());
+        holder.kmPercorrido.setText(String.valueOf(listaQuilometros.get(position).get("kmPercorrido")));
+        holder.data.setText(listaQuilometros.get(position).get("horario"));
     }//onBindViewHolder
 
     @Override
@@ -57,7 +58,7 @@ public class AdapterListaQuilometro extends RecyclerView.Adapter<AdapterListaQui
         public MyViewHolder(View itemView){
             super(itemView);
             data = (TextView) itemView.findViewById(R.id.tvDataLista);
-            kmPercorrido = (TextView) itemView.findViewById(R.id.tvKmPercorridoLista);
+            kmPercorrido = (TextView) itemView.findViewById(R.id.tvKmPercorridoValor);
             observacao = (TextView) itemView.findViewById(R.id.tvObservacaoLista);
 
         }

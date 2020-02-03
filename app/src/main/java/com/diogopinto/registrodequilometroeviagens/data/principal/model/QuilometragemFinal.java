@@ -15,7 +15,7 @@ public class QuilometragemFinal extends Quilometragem {
     protected boolean adicionarKmFinal(Quilometragem km) {
 //Se data é maior que data de ultimo registro então adiciona nova tupla
         if (isMesmoDia(km) == false){
-//            dao.adicionarKmFinal(km);
+            dao.adicionarKmFinal(km);
             adicionarKmInicial(km);
             //adicionar metodo para adicionar novo registro para nova data como ultimo km
 

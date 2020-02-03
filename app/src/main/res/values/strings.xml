@@ -18,6 +18,10 @@
     <string name="tvEditTextKmHoje">Quilometro de hoje:</string>
     <string name="tvRadioGroupExpediente">Este km se refere a:</string>
 
+    <!-- Lista Km-->
+
+    <string name="tvKmPercorridoHoje">Total do Dia</string>
+
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>

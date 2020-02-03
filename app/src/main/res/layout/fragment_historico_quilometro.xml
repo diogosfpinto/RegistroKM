@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
     tools:context=".ui.principal.HistoricoQuilometro">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_lista_quilometros"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvInstrucoes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="- Pressione um item para visualizar mais informações."
+            android:textAlignment="textStart"
+            android:textColor="@color/design_default_color_primary"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/recycler_lista_quilometros"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_lista_quilometros"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvInstrucoes" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>

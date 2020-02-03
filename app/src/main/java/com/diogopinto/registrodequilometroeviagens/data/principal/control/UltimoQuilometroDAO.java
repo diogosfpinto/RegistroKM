@@ -8,11 +8,15 @@ import com.diogopinto.registrodequilometroeviagens.data.principal.model.Quilomet
 import com.diogopinto.registrodequilometroeviagens.data.principal.model.QuilometragemFinal;
 import com.diogopinto.registrodequilometroeviagens.data.principal.model.QuilometragemInicial;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class UltimoQuilometroDAO {
 
@@ -42,18 +46,32 @@ public class UltimoQuilometroDAO {
     }//selecionaUltimoKm
 
     Calendar data = Calendar.getInstance();
-    public List<Quilometragem> retornarAllQuilometros(){
-        List<Quilometragem> quilometragens = new ArrayList<>();
+    public List<Map<String,String>> retornarAllQuilometros(){
+        List<Map<String, String>> quilometragens = new ArrayList<>();
+
         Cursor cursor = gateway.getDatabase().rawQuery("SELECT * FROM Quilometragem", null);
+
+        cursor.moveToFirst();
         while (cursor.moveToNext()){
+            Map<String, String> item = new HashMap<String, String>();
+
+            item.put("kmInicio", cursor.getString(cursor.getColumnIndex("kmInicio")));
+            item.put("kmFinal", cursor.getString(cursor.getColumnIndex("kmFinal")));
+            item.put("kmPercorrido", cursor.getString(cursor.getColumnIndex("kmPercorrido")));
+
+            Date data = new Date(cursor.getLong(cursor.getColumnIndex("horario")));
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            item.put("horario", dateFormat.format(data));
+
+/*
             Quilometragem km = new QuilometragemInicial();
             km.setKm(cursor.getInt(cursor.getColumnIndex("kmInicio")));
             km.setPeriodo(cursor.getInt(cursor.getColumnIndex("periodo")));
-            km.setHorario(new Date(cursor.getLong(cursor.getColumnIndex("horario"))));
-        quilometragens.add(km);
+            km.setHorario(new Date(cursor.getLong(cursor.getColumnIndex("horario"))));*/
+
+            quilometragens.add(item);
 
         }
-
         return quilometragens;
     }
 }
