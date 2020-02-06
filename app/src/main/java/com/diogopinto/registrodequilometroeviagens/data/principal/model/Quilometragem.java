@@ -40,12 +40,12 @@ public abstract class Quilometragem {
 
         if (km.getKm() >= ultimaQuilometragem.getKm()) {
 
-            switch (QuilometragemFactory.quilometragem.getPeriodo()) {
+            switch (km.getPeriodo()) {
                 case 0:
-                    result = adicionarKmInicial(QuilometragemFactory.quilometragem);
+                    result = adicionarKmInicial(km);
                     break;
                 case 1:
-                    result = adicionarKmFinal(QuilometragemFactory.quilometragem);
+                    result = adicionarKmFinal(km);
                     break;
             }
         } else {

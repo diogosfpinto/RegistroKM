@@ -21,7 +21,8 @@ public class QuilometragemInicial extends Quilometragem {
 //Se data é maior que data de ultimo registro então adiciona nova tupla
         if (isMesmoDia(km)==false){
             result = dao.adicionarKmInicial(km);
-//            adicionarKmFinal(km);
+            //atualiza quilometro final do registro anterior;
+            adicionarKmFinal(km);
             return result;
         } else {
             System.out.println("Já existe um km inicial para hoje.");

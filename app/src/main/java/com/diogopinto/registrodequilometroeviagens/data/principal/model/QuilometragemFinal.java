@@ -31,6 +31,7 @@ public class QuilometragemFinal extends Quilometragem {
 
             return result;
         } else {
+            System.out.println("Atulizar tupla já criada.");
             return dao.atualizarKmFinal(km, ultimaQuilometragem);
         }
     }//adicionarKmFinal

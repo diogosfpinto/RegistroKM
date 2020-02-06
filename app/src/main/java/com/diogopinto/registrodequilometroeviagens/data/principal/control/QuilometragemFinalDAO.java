@@ -22,7 +22,12 @@ public class QuilometragemFinalDAO {
     }
 
     public boolean atualizarKmFinal(Quilometragem km, Quilometragem ultimaKm){
-        return false;
+
+        ContentValues cv = new ContentValues();
+        cv.put("kmFinal", km.getKm());
+
+        return gateway.getDatabase().update(TABLE_QUILOMETRAGEM, cv, "ID=?",
+                new String[]{ultimaKm.getId() + ""}) > 0;
     }
 
     public boolean adicionarKmFinal(Quilometragem km){
