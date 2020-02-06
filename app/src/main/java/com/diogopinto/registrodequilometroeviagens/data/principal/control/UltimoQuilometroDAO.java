@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class UltimoQuilometroDAO {
 
-    private final String TABLE_CLIENTES = "Clientes";
+    private final String TABLE_QUILOMETRAGEM = "Quilometragem";
     private DbGateway gateway;
 
     public UltimoQuilometroDAO(Context ctx){
@@ -29,17 +29,20 @@ public class UltimoQuilometroDAO {
 
     public Quilometragem selecionaUltimoKm(){
         Quilometragem ultimoKm = new QuilometragemInicial();
-        Cursor cursor = gateway.getDatabase().rawQuery("SELECT * FROM Quilometragem", null);
-        while (cursor.moveToNext()){
-            ultimoKm.setId(cursor.getInt(cursor.getColumnIndex("ID")));
-            ultimoKm.setHorario(new Date(cursor.getLong(cursor.getColumnIndex("horario"))));
-            ultimoKm.setPeriodo(cursor.getInt(cursor.getColumnIndex("periodo")));
-            if (ultimoKm.getPeriodo()==1){
-                ultimoKm.setKm(cursor.getInt(cursor.getColumnIndex("kmFinal")));
-            } else {
-                ultimoKm.setKm(cursor.getInt(cursor.getColumnIndex("kmInicio")));
+        Cursor cursor = gateway.getDatabase().rawQuery("SELECT * FROM "+TABLE_QUILOMETRAGEM, null);
+        if (cursor!=null){
+            while (cursor.moveToNext()){
+                ultimoKm.setId(cursor.getInt(cursor.getColumnIndex("ID")));
+                ultimoKm.setHorario(new Date(cursor.getLong(cursor.getColumnIndex("horario"))));
+                ultimoKm.setPeriodo(cursor.getInt(cursor.getColumnIndex("periodo")));
+                if (ultimoKm.getPeriodo()==1){
+                    ultimoKm.setKm(cursor.getInt(cursor.getColumnIndex("kmFinal")));
+                } else {
+                    ultimoKm.setKm(cursor.getInt(cursor.getColumnIndex("kmInicio")));
+                }
             }
         }
+
         cursor.close();
 
         return ultimoKm;
@@ -49,7 +52,7 @@ public class UltimoQuilometroDAO {
     public List<Map<String,String>> retornarAllQuilometros(){
         List<Map<String, String>> quilometragens = new ArrayList<>();
 
-        Cursor cursor = gateway.getDatabase().rawQuery("SELECT * FROM Quilometragem", null);
+        Cursor cursor = gateway.getDatabase().rawQuery("SELECT * FROM "+TABLE_QUILOMETRAGEM, null);
 
         cursor.moveToFirst();
         while (cursor.moveToNext()){
@@ -63,15 +66,10 @@ public class UltimoQuilometroDAO {
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             item.put("horario", dateFormat.format(data));
 
-/*
-            Quilometragem km = new QuilometragemInicial();
-            km.setKm(cursor.getInt(cursor.getColumnIndex("kmInicio")));
-            km.setPeriodo(cursor.getInt(cursor.getColumnIndex("periodo")));
-            km.setHorario(new Date(cursor.getLong(cursor.getColumnIndex("horario"))));*/
-
             quilometragens.add(item);
-
         }
+        cursor.close();
+
         return quilometragens;
     }
 }

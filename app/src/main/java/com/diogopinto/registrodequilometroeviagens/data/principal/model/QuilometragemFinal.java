@@ -1,10 +1,20 @@
 package com.diogopinto.registrodequilometroeviagens.data.principal.model;
 
+import android.content.Context;
+
 import com.diogopinto.registrodequilometroeviagens.data.principal.control.QuilometragemFinalDAO;
 
 public class QuilometragemFinal extends Quilometragem {
 
-    QuilometragemFinalDAO dao = new QuilometragemFinalDAO();
+    QuilometragemFinalDAO dao;
+
+    public QuilometragemFinal(){
+
+    }//construtor
+
+    public QuilometragemFinal (Context ctx){
+        dao = new QuilometragemFinalDAO(ctx);
+    }//construtor
 
     @Override
     protected boolean adicionarKmInicial(Quilometragem km) {
@@ -15,11 +25,11 @@ public class QuilometragemFinal extends Quilometragem {
     protected boolean adicionarKmFinal(Quilometragem km) {
 //Se data é maior que data de ultimo registro então adiciona nova tupla
         if (isMesmoDia(km) == false){
-            dao.adicionarKmFinal(km);
-            adicionarKmInicial(km);
+            result = dao.adicionarKmFinal(km);
+//            adicionarKmInicial(km);
             //adicionar metodo para adicionar novo registro para nova data como ultimo km
 
-            return true;
+            return result;
         } else {
             return dao.atualizarKmFinal(km, ultimaQuilometragem);
         }

@@ -19,7 +19,7 @@ public class QuilometragemFactory {
                     quilometragem = new QuilometragemInicial(ctx);
                     break;
                 case 1:
-                    quilometragem = new QuilometragemFinal();
+                    quilometragem = new QuilometragemFinal(ctx);
                     break;
                 default:
                     System.out.println("Falha");

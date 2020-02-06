@@ -23,6 +23,7 @@ public abstract class Quilometragem {
     private int periodo;
 
     public static Quilometragem ultimaQuilometragem;
+    protected boolean result = false;
 
     public Quilometragem(){
 
@@ -36,7 +37,6 @@ public abstract class Quilometragem {
     }//constructor
 
     public boolean adicionarKm(Quilometragem km) {
-        boolean result = false;
 
         if (km.getKm() >= ultimaQuilometragem.getKm()) {
 

@@ -61,6 +61,6 @@ public class AdapterListaQuilometro extends RecyclerView.Adapter<AdapterListaQui
             kmPercorrido = (TextView) itemView.findViewById(R.id.tvKmPercorridoValor);
             observacao = (TextView) itemView.findViewById(R.id.tvObservacaoLista);
 
-        }
-    }
+        }//constructor
+    }//MyViewHolder
 }

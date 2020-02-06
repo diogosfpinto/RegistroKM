@@ -8,7 +8,7 @@ import com.diogopinto.registrodequilometroeviagens.data.principal.model.Quilomet
 
 public class QuilometragemInicialDAO {
 
-    private final String TABLE_QUILOMETRAGME = "Quilometragem";
+    private final String TABLE_QUILOMETRAGEM = "Quilometragem";
     private DbGateway gateway;
 
     public QuilometragemInicialDAO(Context ctx){
@@ -21,7 +21,7 @@ public class QuilometragemInicialDAO {
         cv.put("horario", km.getHorario().getTimeInMillis());
         cv.put("periodo", km.getPeriodo());
 
-        return gateway.getDatabase().insert(TABLE_QUILOMETRAGME, null, cv) > 0;
+        return gateway.getDatabase().insert(TABLE_QUILOMETRAGEM, null, cv) > 0;
     }
 
     public boolean atualizarKmFinal(Quilometragem km, Quilometragem ultimaQuilometragem){

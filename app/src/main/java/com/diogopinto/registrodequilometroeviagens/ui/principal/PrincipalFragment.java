@@ -43,10 +43,19 @@ public class PrincipalFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if (rbInicioExpediente.isChecked()){
-                    //cria objeto para quilometro Inicial
-                    quilometragem = QuilometragemFactory.criarQuilometro(
-                            Constantes.PERIODO_REGISTRO_KM_INICIAL, getContext());
+                try {
+//              Define qual objeto será instanciado: QuilometroInicial ou QuilometroFinal
+                    if (rbInicioExpediente.isChecked()){
+                        //cria objeto para quilometro Inicial
+                        quilometragem = QuilometragemFactory.criarQuilometro(
+                                Constantes.PERIODO_REGISTRO_KM_INICIAL, getContext());
+                    } else if (rbFinalExpediente.isChecked()){
+                        //cria objeto para quilometro Final
+                        quilometragem = QuilometragemFactory.criarQuilometro(
+                                Constantes.PERIODO_REGISTRO_KM_FINAL, getContext());
+                    } else {
+                        mensagem("Por favor, selecione uma opção de expediente.");
+                    }
 
                     quilometragem.setKm(Integer.parseInt(novoKmEditText.getText().toString()));
 
@@ -54,25 +63,27 @@ public class PrincipalFragment extends Fragment {
 
                     boolean result = quilometragem.adicionarKm(quilometragem);
                     if (result){
-                        Toast.makeText(getContext(), "Salvo com sucesso", Toast.LENGTH_LONG).show();
+                        mensagem("Salvo com sucesso");
                         resetarCampos();
                     }else {
-                        Toast.makeText(getContext(), "Registro não salvo.", Toast.LENGTH_LONG).show();
+                        mensagem("Registro não salvo.");
                     }
 
-                } else if (rbFinalExpediente.isChecked()){
-                    //cria objeto para quilometro Final
-                    quilometragem = QuilometragemFactory.criarQuilometro(
-                            Constantes.PERIODO_REGISTRO_KM_FINAL, getContext());
+                }catch(NumberFormatException e){
+                    e.getStackTrace();
                 }
-            }
+
+            }//onClick
         });
 
         return root;
     }//onCreateView
 
 
-    //Recebe uma view que busca os componentes do layout para referênciá-los.
+    /**
+     * Recebe uma view que busca os componentes do layout para referênciá-los.
+     * @param view
+     */
     private void referenciarComponentes(View view){
         rbInicioExpediente = view.findViewById(R.id.rbInicioExp);
         rbFinalExpediente = view.findViewById(R.id.rbFinalExp);
@@ -84,5 +95,13 @@ public class PrincipalFragment extends Fragment {
         QuilometragemFactory.inicializarUltimoQuilometro(getContext());
         novoKmEditText.setText("");
         quilometragem = null;
+    }
+
+    /**
+     * Método que exibe um toast na tela para o parametro recebido.
+     * @param msg
+     */
+    private void mensagem(String msg){
+        Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
     }
 }
