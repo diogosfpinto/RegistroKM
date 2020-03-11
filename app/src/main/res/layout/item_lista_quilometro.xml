@@ -21,14 +21,18 @@
                 android:id="@+id/tvDataLista"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Data" />
+                android:text="Data"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvObservacaoLista"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Observação" />
+                android:text="Observação"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -42,14 +46,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/tvKmPercorridoHoje" />
+                android:text="@string/tvKmPercorridoHoje"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvKmPercorridoValor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="100000" />
+                android:text="100000"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -59,11 +67,13 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/btEditarItemKm"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:foreground="@drawable/ic_edit_black_24dp"
                 android:foregroundGravity="center"
+                android:importantForAccessibility="yes"
                 app:srcCompat="@drawable/ic_edit_black_24dp" />
 
         </LinearLayout>

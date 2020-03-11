@@ -25,6 +25,7 @@ public class QuilometragemFinalDAO {
 
         ContentValues cv = new ContentValues();
         cv.put("kmFinal", km.getKm());
+        cv.put("kmPercorrido", (km.getKm() - ultimaKm.getKm()));
 
         return gateway.getDatabase().update(TABLE_QUILOMETRAGEM, cv, "ID=?",
                 new String[]{ultimaKm.getId() + ""}) > 0;
