@@ -12,6 +12,10 @@
             android:id="@+id/nav_historicoQuilometro"
             android:icon="@drawable/ic_menu_historico_km"
             android:title="@string/menu_historicoKm" />
+        <item
+            android:id="@+id/nav_fragment_abastecimento"
+            android:icon="@drawable/ic_menu_historico_km"
+            android:title="@string/menu_abastecimento" />
     </group>
 
     <item android:title="Communicate">

@@ -28,6 +28,7 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_historicoKm">Histórico de Quilometros</string>
+    <string name="menu_abastecimento">Abastecimentos</string>
     <string name="menu_share">Share</string>
 
     <string name="action_settings">Settings</string>
