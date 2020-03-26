@@ -10,11 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.diogopinto.registrodequilometroeviagens.R;
 import com.diogopinto.registrodequilometroeviagens.data.Constantes;
 import com.diogopinto.registrodequilometroeviagens.data.principal.control.QuilometragemFactory;
+import com.diogopinto.registrodequilometroeviagens.data.principal.control.UltimoQuilometroDAO;
 import com.diogopinto.registrodequilometroeviagens.data.principal.model.Quilometragem;
 
 import androidx.annotation.NonNull;
@@ -25,6 +27,7 @@ public class PrincipalFragment extends Fragment {
     RadioButton rbInicioExpediente, rbFinalExpediente;
     Button btSalvar;
     EditText novoKmEditText;
+    TextView tvUlitmoKm;
 
     private Quilometragem quilometragem;
 
@@ -39,6 +42,7 @@ public class PrincipalFragment extends Fragment {
         QuilometragemFactory.inicializarUltimoQuilometro(getContext());
         referenciarComponentes(root);
 
+        tvUlitmoKm.setText(String.valueOf(Quilometragem.ultimaQuilometragem.getKm()));
         btSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,6 +93,7 @@ public class PrincipalFragment extends Fragment {
         rbFinalExpediente = view.findViewById(R.id.rbFinalExp);
         btSalvar = view.findViewById(R.id.btSalvar);
         novoKmEditText = view.findViewById(R.id.novoKmTextInputText);
+        tvUlitmoKm = view.findViewById(R.id.tvUltimaQuilometragem);
     }//referenciarComponentes
 
     private void resetarCampos(){
