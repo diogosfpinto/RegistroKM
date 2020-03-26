@@ -12,20 +12,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/msg_BoasVindas"
-        android:textAppearance="@style/AppTheme"
-        android:textSize="20dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvNomeColaboradorHome"
-        android:layout_width="59dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Diogo"
-        android:textAppearance="@style/AppTheme"
-        android:textSize="20dp"
+        android:text="Diogo!"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/msg_BoasVindas"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +36,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textAppearance="@style/AppTheme"
+        android:textSize="18dp"
         android:text="@string/veiculo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/msg_BoasVindas" />
@@ -46,6 +48,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:textSize="18dp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
         android:text="FNG-2706"
         app:layout_constraintStart_toEndOf="@+id/msg_veiculo"
         app:layout_constraintTop_toBottomOf="@id/msg_BoasVindas" />
@@ -55,6 +60,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textAppearance="@style/AppTheme"
+        android:textSize="18dp"
         android:text="@string/msg_ultimaQuilometragem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/msg_veiculo" />
@@ -65,6 +72,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:textSize="18dp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:text="TESTE"
         app:layout_constraintStart_toEndOf="@+id/msg_ultimaQuilometragem"
         app:layout_constraintTop_toBottomOf="@+id/msg_veiculo" />
 

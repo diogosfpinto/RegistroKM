@@ -42,7 +42,13 @@ public class PrincipalFragment extends Fragment {
         QuilometragemFactory.inicializarUltimoQuilometro(getContext());
         referenciarComponentes(root);
 
+        //retorna o ultimo quilometro registrado. OBs: Está buscando o campo de acordo com o período
+        //setado.
         tvUlitmoKm.setText(String.valueOf(Quilometragem.ultimaQuilometragem.getKm()));
+
+        /**
+         * Funcionalidade do botão Salvar
+         * */
         btSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
